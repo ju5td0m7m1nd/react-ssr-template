@@ -14,6 +14,13 @@ React Server Side Render.
 
 ## Installation
 
+###NPM
 
+    npm install
+    npm start
+###Yarn
 
-
+    // if you don't have one, you should give it a try > < 
+    npm install -g yarn
+    yarn
+    npm start
