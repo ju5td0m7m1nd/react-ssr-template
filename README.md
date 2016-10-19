@@ -25,6 +25,6 @@ React Server Side Render.
     yarn
     npm start
 
-## Licence
+## License
 
 MIT
