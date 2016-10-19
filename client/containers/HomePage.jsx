@@ -17,15 +17,13 @@ class HomePage extends React.Component {
     this.state = {
       open: false,
     }
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
   }
 
-  handleOpen() {
+  handleOpen = () => {
     this.setState({open: true});
   }
 
-  handleClose() {
+  handleClose = () => {
     this.setState({open: false});
   }
 

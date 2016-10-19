@@ -21471,13 +21471,15 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _redux = __webpack_require__(173);
 	
 	var reducer = function reducer(state, action) {
 	  switch (action.type) {
-	    case 'add_comment':
+	    case 'some_action':
 	      {
-	        return Object.assign(state, { comment: action.payload });
+	        return _extends({}, state, { reactRocks: action.payload });
 	      }
 	    default:
 	      return state;
@@ -28789,25 +28791,21 @@
 	
 	    var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
 	
+	    _this.handleOpen = function () {
+	      _this.setState({ open: true });
+	    };
+	
+	    _this.handleClose = function () {
+	      _this.setState({ open: false });
+	    };
+	
 	    _this.state = {
 	      open: false
 	    };
-	    _this.handleOpen = _this.handleOpen.bind(_this);
-	    _this.handleClose = _this.handleClose.bind(_this);
 	    return _this;
 	  }
 	
 	  _createClass(HomePage, [{
-	    key: 'handleOpen',
-	    value: function handleOpen() {
-	      this.setState({ open: true });
-	    }
-	  }, {
-	    key: 'handleClose',
-	    value: function handleClose() {
-	      this.setState({ open: false });
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var actions = [_react2.default.createElement(_FlatButton2.default, {

@@ -2,8 +2,8 @@ import {createStore} from 'redux';
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case 'add_comment': {
-      return Object.assign(state, {comment: action.payload});
+    case 'some_action': {
+      return {...state, reactRocks: action.payload };
     }
     default:
       return state;
