@@ -24,3 +24,7 @@ React Server Side Render.
     npm install -g yarn
     yarn
     npm start
+
+## Licence
+
+MIT
