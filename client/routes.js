@@ -1,8 +1,8 @@
-import React from 'react';
-import {Route, IndexRoute} from 'react-router';
-import Index from './index';
+import React from 'react'
+import {Route, IndexRoute} from 'react-router'
+import Index from './index'
 
-import HomePage from './containers/HomePage';
+import HomePage from './containers/HomePage'
 
 const routes = (
     <Route path="/" component={Index}>
@@ -10,4 +10,4 @@ const routes = (
     </Route>
 )
 
-export default routes;
+export default routes

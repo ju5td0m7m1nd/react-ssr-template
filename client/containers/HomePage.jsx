@@ -3,28 +3,28 @@
  * Created by caimingxun on 2016/10/16.
  */
 
-import React from 'react';
-import {connect} from 'react-redux';
+import React from 'react'
+import {connect} from 'react-redux'
 
 // component
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog'
+import FlatButton from 'material-ui/FlatButton'
+import RaisedButton from 'material-ui/RaisedButton'
 
 class HomePage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       open: false,
     }
   }
 
   handleOpen = () => {
-    this.setState({open: true});
+    this.setState({open: true})
   }
 
   handleClose = () => {
-    this.setState({open: false});
+    this.setState({open: false})
   }
 
   render() {
@@ -34,7 +34,7 @@ class HomePage extends React.Component {
         primary={true}
         onTouchTap={this.handleClose}
       />,
-    ];
+    ]
     return (
       <section className="home-page" >
         <RaisedButton label="RSS" onTouchTap={this.handleOpen} secondary />
@@ -52,4 +52,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default connect()(HomePage);
+export default connect()(HomePage)

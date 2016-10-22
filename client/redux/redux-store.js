@@ -1,12 +1,12 @@
-import {createStore} from 'redux';
+import {createStore} from 'redux'
 
 const reducer = (state, action) => {
   switch(action.type) {
     case 'some_action': {
-      return {...state, reactRocks: action.payload };
+      return {...state, reactRocks: action.payload }
     }
     default:
-      return state;
+      return state
   }
 }
 
