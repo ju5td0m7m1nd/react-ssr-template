@@ -1,12 +1,12 @@
 'use strict'
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 
 class Index extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
@@ -30,10 +30,10 @@ class Index extends React.Component {
 }
 
 var IndexState = function(state) {
-	var stateJSON = JSON.stringify(state).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--');
+	var stateJSON = JSON.stringify(state).replace(/<\/script/g, '<\\/script').replace(/<!--/g, '<\\!--')
 	return {
 		initialState: "window.__INITIAL_STATE__ = "+stateJSON
 	}
 }
 
-export default connect(IndexState)(Index);
+export default connect(IndexState)(Index)
