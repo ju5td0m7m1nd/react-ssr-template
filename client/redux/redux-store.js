@@ -1,13 +1,11 @@
-import {createStore} from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
+import reducer from '../../reducers'
 
-const reducer = (state, action) => {
-  switch(action.type) {
-    case 'some_action': {
-      return {...state, reactRocks: action.payload }
-    }
-    default:
-      return state
-  }
+export default (initialState) => {
+  const middleware = process.env.NODE_ENV === 'production' ?
+    [thunk] :
+    [thunk, createLogger()]
+  return createStore(reducer, initialState, applyMiddleware(...middleware))
 }
-
-export default (initialState) => createStore(reducer, initialState)
