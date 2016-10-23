@@ -3,36 +3,31 @@ import { browserHistory } from 'react-router'
 import request from 'superagent'
 import config from '../config'
 
-export function receiveProducts(products) {
-  return {
-    type: types.RECEIVE_PRODUCTS,
-    products
-  }
-}
+export const clientRender = () => 
+  ({ type: types.SET_SERVER_RENDER_FLAG_FALSE })
 
-export function getAllProducts(cookie) {
-  return (dispatch, getState) => {
-    return new Promise((resolve, reject) => {
-      let headers = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-      if (cookie) {
-        headers['cookie'] = cookie
-      }
-      request.
-        get(`${config.domain}/products.json`).
-        withCredentials().
-        set(headers).
-        end((err, res) => {
-          if (!err) {
-            let data = JSON.parse(res.text)
-            dispatch(receiveProducts(data))
-            resolve(receiveProducts(data))
-          } else {
-            reject(err)
-          }
-        })
-    })
-  }
-}
+export const serverRender = () =>
+  ({ type: types.SET_SERVER_RENDER_FLAG_TRUE })
+
+export const getList = 
+  ({ limit, offset }) =>
+    dispatch =>
+      new Promise((resolve, reject) =>
+        request.
+          get(`${config.endpoint}&limit=${limit}&offset=${offset}`).
+          set({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }).
+          end((err, res) => {
+            if (!err) {
+              let data = JSON.parse(res.text).result.records
+              dispatch({
+                type: types.GET_PARKS_LIST_SUCCESS,
+                data
+              })
+              resolve()
+            } else {
+              reject(err)
+            }
+          }))
