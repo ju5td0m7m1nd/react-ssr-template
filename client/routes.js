@@ -1,13 +1,12 @@
 import React from 'react'
-import {Route, IndexRoute} from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 import Index from './index'
-
 import HomePage from './containers/HomePage'
+import ParksContainer from './containers/ParksContainer'
 
-const routes = (
-    <Route path="/" component={Index}>
-      <IndexRoute component={HomePage}/>
-    </Route>
+export default (
+  <Route path="/" component={Index}>
+    <IndexRoute component={HomePage}/>
+    <Route path='/parks' component={ParksContainer} />
+  </Route>
 )
-
-export default routes

@@ -1,17 +1,14 @@
-'use strict'
 /**
  * Created by caimingxun on 2016/10/16.
  */
 
-import React from 'react'
-import {connect} from 'react-redux'
-
-// component
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
 
-class HomePage extends React.Component {
+class HomePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
