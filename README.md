@@ -25,6 +25,20 @@ React Server Side Render.
     yarn
     npm start
 
+## Example
+
+server render without any fetching data or loading data
+
+    http://localhost:3000/
+
+fetching data before server render
+
+    http://localhost:3000/parks
+    
+## Thanks
+
+Thanks to [davidjuin0519](https://github.com/davidjuin0519) for the implementation and example of fetching data.
+
 ## License
 
 MIT
