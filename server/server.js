@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
   const limit = 10
   const offset = 20
 
-  match({ routes: routes, location: req.url }, function (error, redirectLocation, renderProps) {
+  match({ routes: routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.status(500).send(error.message)
     } else if (redirectLocation) {
